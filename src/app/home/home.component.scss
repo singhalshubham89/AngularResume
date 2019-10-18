@@ -1,0 +1,219 @@
+
+
+.social{
+    color: whitesmoke !important;
+    font-weight: 500px !important;
+
+    &:hover{
+        color: #ad1457 !important;
+        font-weight: 500px !important;
+    }
+}
+
+.bg-img {
+    background: url(/assets/images/workspace.jpg)no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0; 
+        right: 0;
+        top: 0; 
+        bottom: 0;
+        background: rgba(0,0,0,0.8);
+    }
+}
+
+.btn-dark, .btn-danger{
+    &:hover{
+        background-color: white;
+        border: solid #ad1457 !important;
+        color: #ad1457 !important;
+        transform: scale(1.03) !important;
+        transition: all .5s;
+    }
+}
+
+
+p{
+    font-size: 13px !important;
+}
+
+.card{
+    border-radius: 0px;
+}
+
+.profile-picture{
+    width: 100px;
+}
+
+/* Slanted divs for small and medium devices */
+@mixin slanted-sm-md-background($background-color){
+    position: inherit;
+    background-color: $background-color;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%);
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+/* Slanted divs css for large devices */
+@mixin slanted-lg-background($background-color){
+    position: inherit;
+    background-color: $background-color;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%);
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+/* Slanted divs css for xs devices */
+@mixin slanted-xs{
+    .slanted {
+        background-color: #00acc1 ;
+        margin-bottom: 30px;
+    }
+
+    .slanted2 {
+        background-color: #7283a7;
+    }
+}
+
+/* Slanted divs for sm devices */
+@mixin slanted-sm{
+    .slanted {
+       @include slanted-sm-md-background(#00acc1);
+    }
+
+    .slanted2 {
+        @include slanted-sm-md-background(#7283a7);
+    }
+}
+
+/* Slanted divs for md devices */
+@mixin slanted-md{
+    .slanted {
+       @include slanted-sm-md-background(#00acc1);
+    }
+
+    .slanted2 {
+        @include slanted-sm-md-background(#7283a7);
+    }
+}
+
+/* Slanted divs for lg devices */
+@mixin slanted-lg{
+    .slanted {
+        @include slanted-lg-background(#00acc1);
+    }
+
+    .slanted2 {
+        @include slanted-lg-background(#7283a7);
+    }
+}
+
+
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+    @include slanted-xs;
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+    @include slanted-xs;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    @include slanted-xs;
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    @include slanted-xs;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    @include slanted-lg;
+}
+
+.mid{
+    height: 600px;
+}
+
+.text-main{
+    color: #a7ffeb  ;
+}
+
+.about{
+    font-size: 15px !important;
+}
+
+.container-text {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.h3-home{
+    position: relative !important;
+    color: white !important;
+}
+
+.container-fluid{
+    scroll-behavior: smooth !important;
+}
+
+.navigation-button{
+    position: fixed;
+    top: 85%;
+    right: 3%;
+    z-index: 2;
+    color: #263238;
+    cursor: pointer;
+    font-size: 35px;
+
+    &:hover{
+        color: #ad1457;
+    }
+
+    p{
+        font-weight: 600;
+    }
+}
+
+.enlarge {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.line-1{
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+/* Animation */
+.typewriter{
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 20em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}

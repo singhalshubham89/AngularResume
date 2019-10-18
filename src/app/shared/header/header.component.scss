@@ -1,0 +1,87 @@
+.nav-link{
+	color: whitesmoke !important;
+	font-size: 11px !important;
+	text-transform: uppercase !important;
+	font-weight: 600 !important;
+	letter-spacing: 2px !important;
+
+   
+}
+
+/* Underline From Left */
+.hvr-underline-from-left {
+    &:before {
+        background: #d9534f !important;
+        height: 1px !important;
+    }
+
+}
+
+.navbar-brand{
+	color: whitesmoke !important;
+}
+
+.navbar{
+	border-bottom: solid 1px red;
+}
+
+.social-min a{
+	color: white !important;
+	cursor: pointer;
+	letter-spacing:  10px;
+	padding-left: 10px;
+}
+
+.nav{
+  text-align: center;
+      z-index: 99999;
+}
+
+.navbar-toggler{
+    border: none !important;
+}
+
+.fixed-top{
+    -webkit-animation: show fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 0.5s; /* Firefox < 16 */
+        -ms-animation: fadein 0.5s; /* Internet Explorer */
+         -o-animation: fadein 0.5s; /* Opera < 12.1 */
+            animation: fadein 0.5s;
+}
+
+
+
+@keyframes show fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.navbar-toggler{
+    position: absolute !important;
+    top: 10px;
+    right: 10px;
+}

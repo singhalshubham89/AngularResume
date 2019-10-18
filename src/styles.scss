@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files
+body{
+	background-color: whitesmoke;
+	position: relative;
+}
+
+a{
+	color: red;
+}
+
+* {
+    font-family: Ubuntu;
+  }
+ */
+@mixin scroll-for-all{
+  color: gray !important;
+  font-size: 13px !important;
+}
+
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  @include scroll-for-all;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder { 
+  @include scroll-for-all;
+}
+
+/* IE 10+ */
+:-ms-input-placeholder { 
+  @include scroll-for-all;
+}
+
+/* Firefox 18- */
+:-moz-placeholder { 
+  @include scroll-for-all;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: gray;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
