@@ -11,7 +11,7 @@ import { mainAnimations } from '../animations/all-animation';
 export class PortfolioComponent implements OnInit {
 
 	constructor() { }
-
+	state:string;
 	ngOnInit() {
 		window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
 	}
