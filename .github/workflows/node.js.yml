@@ -1,30 +1,36 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
-
-on:
-  push:
-    branches: [ master ]
+name: "build-test"
+on: # rebuild any PRs and main branch changes
   pull_request:
-    branches: [ master ]
+  push:
+    branches:
+      - master
+      - 'releases/*'
 
 jobs:
-  build:
-
+  build_and_test_action: # make sure build/ci work properly
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x]
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Angular pages
-      uses: AhsanAyaz/angular-deploy-gh-pages-actions
+    - uses: actions/checkout@v1
+    - run: |
+        npm install
+        npm run all
+  test_demo_app: # run the demo app's unit tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: |
+        npm install
+        npm run test:ci
+      working-directory: './jokester'
+  test_action_and_deploy_demo: # make sure the action works on a clean machine without building
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: 'Deploy demo app using action'
+      uses: ./
       with:
-        github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
-        build_configuration: prod # The build environment for the app. please look configurations in your angular.json
-        base_href: /AngularResume/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+        run_lint: true
+        github_access_token: ${{ secrets.ACCESS_TOKEN }}
+        base_href: /AngularResume/
         deploy_branch: gh-pages # The branch the action should deploy to.
-        build_folder: dist/AngularResume # The folder where your project is supposed to be after running ng build by the action.
+        build_folder: dist/AngularResume # The folder the action should deploy.
