@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Angular pages
-      uses: AhsanAyaz/angular-deploy-gh-pages-actions@latest
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions
       with:
         github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
         build_configuration: prod # The build environment for the app. please look configurations in your angular.json
